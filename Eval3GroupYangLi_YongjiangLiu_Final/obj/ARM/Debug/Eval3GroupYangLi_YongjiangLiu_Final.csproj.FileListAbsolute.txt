@@ -1,0 +1,11 @@
+C:\Users\atdig\source\repos\Eval3GroupYangLi_YongjiangLiu_Final\Eval3GroupYangLi_YongjiangLiu_Final\obj\ARM\Debug\Eval3GroupYangLi_YongjiangLiu_Final.csproj.AssemblyReference.cache
+C:\Users\atdig\source\repos\Eval3GroupYangLi_YongjiangLiu_Final\Eval3GroupYangLi_YongjiangLiu_Final\obj\ARM\Debug\App.g.i.cs
+C:\Users\atdig\source\repos\Eval3GroupYangLi_YongjiangLiu_Final\Eval3GroupYangLi_YongjiangLiu_Final\obj\ARM\Debug\App.g.cs
+C:\Users\atdig\source\repos\Eval3GroupYangLi_YongjiangLiu_Final\Eval3GroupYangLi_YongjiangLiu_Final\obj\ARM\Debug\MainPage.g.i.cs
+C:\Users\atdig\source\repos\Eval3GroupYangLi_YongjiangLiu_Final\Eval3GroupYangLi_YongjiangLiu_Final\obj\ARM\Debug\MainPage.g.cs
+C:\Users\atdig\source\repos\Eval3GroupYangLi_YongjiangLiu_Final\Eval3GroupYangLi_YongjiangLiu_Final\obj\ARM\Debug\App.xaml
+C:\Users\atdig\source\repos\Eval3GroupYangLi_YongjiangLiu_Final\Eval3GroupYangLi_YongjiangLiu_Final\obj\ARM\Debug\MainPage.xaml
+C:\Users\atdig\source\repos\Eval3GroupYangLi_YongjiangLiu_Final\Eval3GroupYangLi_YongjiangLiu_Final\obj\ARM\Debug\PageVoyageur.xaml
+C:\Users\atdig\source\repos\Eval3GroupYangLi_YongjiangLiu_Final\Eval3GroupYangLi_YongjiangLiu_Final\obj\ARM\Debug\App.xbf
+C:\Users\atdig\source\repos\Eval3GroupYangLi_YongjiangLiu_Final\Eval3GroupYangLi_YongjiangLiu_Final\obj\ARM\Debug\MainPage.xbf
+C:\Users\atdig\source\repos\Eval3GroupYangLi_YongjiangLiu_Final\Eval3GroupYangLi_YongjiangLiu_Final\obj\ARM\Debug\PageVoyageur.xbf

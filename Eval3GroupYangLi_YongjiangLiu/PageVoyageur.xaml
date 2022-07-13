@@ -1,0 +1,143 @@
+﻿<Page
+    x:Class="Eval3GroupYangLi_YongjiangLiu.PageVoyageur"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Eval3GroupYangLi_YongjiangLiu"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1280" Height="700">
+
+    <Page.Resources>
+        <Style x:Key="formBox" TargetType="TextBox">
+            <Setter Property="Height" Value="30" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="BorderBrush" Value="#FFCCC81B"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="10,10,10,10"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+        <Style x:Key="listBox" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="83" />
+            <Setter Property="Height" Value="41" />
+            <Setter Property="Background" Value="#33CCC81B" />
+            <Setter Property="FontSize"  Value ="14"/>
+            <Setter Property="BorderBrush" Value="#FFCCC81B"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+
+        <Style x:Key="formBTN" TargetType="Button">
+            <Setter Property="Width" Value="395" />
+            <Setter Property="Height" Value="40" />
+            <Setter Property="Background" Value="#33CCC81B" />
+            <Setter Property="FontWeight"  Value ="Bold"/>
+            <Setter Property="BorderBrush" Value="#FFCCC81B"/>
+            <Setter Property="BorderThickness" Value="3"/>
+            <Setter Property="CornerRadius" Value="10,10,10,10"/>
+            <Setter Property="Margin" Value="0,5,0,5"/>
+        </Style>
+
+        <Style x:Key="pageBTN" TargetType="Button">
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Height" Value="40" />
+            <Setter Property="Background" Value="#FFCCC81B" />
+            <Setter Property="FontWeight"  Value ="Bold"/>
+            <Setter Property="BorderBrush" Value="#FFCCC81B"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="CornerRadius" Value="10,10,10,10"/>
+        </Style>
+
+        <Style x:Key="clearBTN" TargetType="Button">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="HorizontalContentAlignment" Value="Right" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Margin" Value ="2,0,0,0"/>
+        </Style>
+    </Page.Resources>
+
+    <StackPanel x:Name="voyageurPage" Width="1280" Height="700" Orientation="Horizontal" Loading="voyageurPage_Loading">
+        <StackPanel.Background>
+            <ImageBrush ImageSource = "/Assets/voyage.jpg"/>
+        </StackPanel.Background>
+        <StackPanel Width="600" Height="700" Orientation="Vertical" VerticalAlignment ="Center">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF75C8CB"/>
+                    <GradientStop Color="#7F152C9D" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <StackPanel  Width="500" Height="600" BorderBrush="#FFCCC81B" BorderThickness="2" CornerRadius="40,40,40,40" Background="#BFCCC81B" Margin="0,50,0,0" Padding="50,40,50,50">
+                <TextBlock Text="VOYAGE 2022" TextAlignment="Center" FontSize="32" FontWeight="Bold" FontFamily="Engravers MT" />
+                <Grid Width="380" Height="260" Margin="0,30,0,30">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column ="0"  Text="Nom" VerticalAlignment ="Center"/>
+                    <TextBox x:Name="txbNom" Grid.Row="0" Grid.Column ="1" Style="{StaticResource formBox}" Text="{ Binding Nom }"/>
+                    <TextBlock Grid.Row="1" Grid.Column ="0"  Text="Preom" VerticalAlignment ="Center"/>
+                    <TextBox x:Name="txbPrenom" Grid.Row="1" Grid.Column ="1" Style="{StaticResource formBox}"  Text="{ Binding Prenom }"/>
+                    <TextBlock Grid.Row="2" Grid.Column ="0"  Text="Sexe" VerticalAlignment ="Center"/>
+
+                    <ComboBox x:Name="cbxSexe" Grid.Row="2" Grid.Column ="1" Height="30" Width ="190"  BorderBrush="#FFCCC81B" BorderThickness="1" CornerRadius="10,10,10,10"
+                        SelectedIndex="0" VerticalAlignment="Center" >
+                        <x:String>Homme</x:String>
+                        <x:String>Femme</x:String>
+                        <x:String>Autre</x:String>
+                    </ComboBox>
+
+                    <TextBlock Grid.Row="3" Grid.Column ="0"  Text="Date de Naissance" VerticalAlignment ="Center"/>
+                    <TextBox x:Name="txbNaissance" Grid.Row="3" Grid.Column ="1" Style="{StaticResource formBox}" Text="{ Binding Naissance }"/>
+                    <TextBlock Grid.Row="4" Grid.Column ="0"  Text="No Passeport" VerticalAlignment ="Center"/>
+                    <TextBox x:Name="txbPasseport" Grid.Row="4" Grid.Column ="1" Style="{StaticResource formBox}" Text="{ Binding Passeport }"/>
+                    <TextBlock Grid.Row="5" Grid.Column ="0"  Text="Date d'Echeance" VerticalAlignment ="Center"/>
+                    <TextBox x:Name="txbEcheance" Grid.Row="5" Grid.Column ="1" Style="{StaticResource formBox}" Text="{ Binding Echeance }"/>
+                    <Popup>
+                        <Grid Background="#FFE5E5E5"/>
+                    </Popup>
+                </Grid>
+
+                <StackPanel Width="400" Height ="150"  Orientation="Vertical" HorizontalAlignment ="Stretch" VerticalAlignment ="Center">
+                    <Button x:Name="btnNouveau" Content = "Nouveau" Style="{StaticResource formBTN}" Click="btnNouveau_Click"/>
+                    <Button x:Name="btnAjouter" Content = "Ajouter" Style="{StaticResource formBTN}" Click="btnAjouter_Click"/>
+                    <Button x:Name="btnSupprimer" Content = "Supprimer" Style="{StaticResource formBTN}"  Click="btnSupprimer_Click" Margin="0,5,0,5"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Width="680" Height="700" Padding="0,50,0,0" >
+            <StackPanel Width="600" Height="600" BorderBrush=" #FFCCC81B" BorderThickness="3" CornerRadius="40,40,40,40" Padding="40,40,40,40" HorizontalAlignment="Center">
+                <StackPanel Width="500" Height="Auto" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="Voyageurs list ..." FontSize="20" TextAlignment="Center" Padding="0,5,0,0" Margin="10,0,200,0"/>
+                    <Button x:Name="btnEffacer" Content="Effacer tout ..." Style="{StaticResource clearBTN}" Click="btnEffacer_Click" />
+                </StackPanel>
+
+                <StackPanel Width="498" Height="238" BorderThickness="2" Background="#66FFFFFF" BorderBrush="#FFCCC81B" CornerRadius="10,10,10,10" Margin="0,30,0,0">
+                    <TextBlock x:Name="txbList" Width="498" Height="200" TextWrapping="Wrap" LineHeight="2" TextAlignment="Left" Padding="20,20,20,20" Style="{StaticResource listBox}"  />
+                </StackPanel>
+                
+                <TextBox x:Name="txbMessage" Width="500" Height="40" BorderThickness="2" Background="#66FFFFFF" BorderBrush="#FFCCC81B" CornerRadius="10,10,10,10" Margin="0,20,0,0" Padding="20,6,6,3" />
+
+                <StackPanel Width="500" Height="100" Margin="0,20,0,0" Orientation="Horizontal" BorderBrush="#FFCCC81B" BorderThickness="2" CornerRadius="10,10,10,10" Padding="30,0,25,0">
+                    <Button x:Name="btnPremier" Content="Premier" Style="{StaticResource pageBTN}"  Margin="0,5,5,5" Click="btnPremier_Click" />
+                    <Button x:Name="btnSuivant" Content="Suivant" Style="{StaticResource pageBTN}"  Margin="5,5,5,5" Click="btnSuivant_Click" />
+                    <Button x:Name="btnPrecedent" Content="Precedent" Style="{StaticResource pageBTN}"  Margin="5,5,5,5" Click="btnPrecedent_Click" />
+                    <Button x:Name="btnDernier" Content="Dernier" Style="{StaticResource pageBTN}" Margin="5,5,0,5" Click="btnDernier_Click" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+    </StackPanel>
+</Page>

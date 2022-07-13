@@ -1,0 +1,145 @@
+﻿<Page
+    x:Class="Eval3GroupYangLi_YongjiangLiu_Final.PageVoyageur"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Eval3GroupYangLi_YongjiangLiu_Final"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1280" Height="700">
+
+    <StackPanel Width="1280" Height="700" Orientation="Horizontal">
+        <StackPanel.Background>
+            <ImageBrush ImageSource = "/Assets/voyage.jpg"/>
+        </StackPanel.Background>
+        <StackPanel Width="600" Height="700" Orientation="Vertical" VerticalAlignment ="Center">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF75C8CB"/>
+                    <GradientStop Color="#7F152C9D" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <StackPanel  Width="500" Height="600" BorderBrush="#FFCCC81B" BorderThickness="2" CornerRadius="40,40,40,40" Background="#BFCCC81B" Margin="0,50,0,0" Padding="50,50,50,50">
+                <TextBlock Text="VOYAGE 2022" TextAlignment="Center" FontSize="32" FontWeight="Bold" FontFamily="Engravers MT" />
+                <Grid Width="380" Height="240" Margin="0,30,0,30">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column ="0"  Text="Nom" VerticalAlignment ="Center" FontSize="20"/>
+                    <TextBox x:Name="txbNom" Grid.Row="0" Grid.Column ="1" Height="30" BorderBrush="#FFCCC81B" BorderThickness="1" CornerRadius="10,10,10,10" 
+                             Text="{ Binding Nom }"/>
+                    <TextBlock Grid.Row="1" Grid.Column ="0"  Text="Preom" VerticalAlignment ="Center" FontSize="20"/>
+                    <TextBox x:Name="txbPrenom" Grid.Row="1" Grid.Column ="1" Height="30" BorderBrush="#FFCCC81B" BorderThickness="1" CornerRadius="10,10,10,10" 
+                             Text="{ Binding Prenom }"/>
+                    <TextBlock Grid.Row="2" Grid.Column ="0"  Text="Sexe" VerticalAlignment ="Center" FontSize="20"/>
+                    <TextBox x:Name="txbSexe" Grid.Row="2" Grid.Column ="1" Height="30" BorderBrush="#FFCCC81B" BorderThickness="1" CornerRadius="10,10,10,10" 
+                             Text="{ Binding Sexe }"/>
+                    <TextBlock Grid.Row="3" Grid.Column ="0"  Text="Date de Naissance" VerticalAlignment ="Center" FontSize="20"/>
+                    <TextBox x:Name="txbNaissance" Grid.Row="3" Grid.Column ="1" Height="30" BorderBrush="#FFCCC81B" BorderThickness="1" CornerRadius="10,10,10,10" 
+                             Text="{ Binding Naissance }"/>
+                    <TextBlock Grid.Row="4" Grid.Column ="0"  Text="No Passeport" VerticalAlignment ="Center" FontSize="20"/>
+                    <TextBox x:Name="txbPasseport" Grid.Row="4" Grid.Column ="1" Height="30" BorderBrush="#FFCCC81B" BorderThickness="1" CornerRadius="10,10,10,10" 
+                             Text="{ Binding Passeport }"/>
+                    <TextBlock Grid.Row="5" Grid.Column ="0"  Text="Date d'Echeance" VerticalAlignment ="Center" FontSize="20"/>
+                    <TextBox x:Name="txbEcheance" Grid.Row="5" Grid.Column ="1" Height="30" BorderBrush="#FFCCC81B" BorderThickness="1" CornerRadius="10,10,10,10" 
+                             Text="{ Binding Echeance }"/>
+                    <Popup>
+                        <Grid Background="#FFE5E5E5"/>
+                    </Popup>
+                </Grid>
+
+                <StackPanel Width="400" Height ="150"  Orientation="Vertical" HorizontalAlignment ="Stretch" VerticalAlignment ="Center">
+                    <Button x:Name="btnNouveau" Content = "Nouveau" FontWeight="Bold" Width="395" Height="40"  BorderBrush="#FFCCC81B" BorderThickness="3" CornerRadius="10,10,10,10" Margin="0,5,0,5" Click="btnNouveau_Click"/>
+                    <Button x:Name="btnAjouter" Content = "Ajouter" FontWeight="Bold" Width="395" Height="40"  BorderBrush="#FFCCC81B" BorderThickness="3" CornerRadius="10,10,10,10" Margin="0,5,0,5" Click="btnAjouter_Click"/>
+                    <Button x:Name="btnSupprimer" Content = "Supprimer" FontWeight="Bold" Width="395" Height="40"  BorderBrush="#FFCCC81B" BorderThickness="3" CornerRadius="10,10,10,10" Margin="0,5,0,5" Click="btnSupprimer_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Width="680" Height="700" Padding="0,50,0,0" >
+            <StackPanel Width="600" Height="600" BorderBrush=" #FFCCC81B" BorderThickness="3" CornerRadius="40,40,40,40" Padding="40,40,40,40" HorizontalAlignment="Center">
+                <StackPanel Width="500" Height="Auto" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="Voyageurs list ..." FontSize="20" TextAlignment="Center" Padding="0,5,0,0" Margin="10,0,200,0"/>
+                    <Button x:Name="btnEffacer" Content="Effacer tout ..." FontSize="20" HorizontalContentAlignment="Right" HorizontalAlignment="Center" Margin="2,0,0,0" Click="btnEffacer_Click" />
+                </StackPanel>
+                <Grid Width="498" Height="240" Margin="0,50,0,0" BorderBrush="#FFCCC81B" BorderThickness="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Button Content="Nom" Grid.Row="0" Grid.Column="0"  Width="83" Height ="40" BorderBrush="#FFCCC81B" BorderThickness="1" Background="#33CCC81B" />
+                    <Button Content="Preom" Grid.Row="0" Grid.Column="1"  Width="83" Height ="40" BorderBrush="#FFCCC81B" BorderThickness="1" Background="#33CCC81B" />
+                    <Button Content="Sexe" Grid.Row="0" Grid.Column="2"  Width="83" Height ="40" BorderBrush="#FFCCC81B" BorderThickness="1" Background="#33CCC81B" />
+                    <Button Content="Naissance" Grid.Row="0" Grid.Column="3"  Width="83" Height ="40" BorderBrush="#FFCCC81B" BorderThickness="1" Background="#33CCC81B" />
+                    <Button Content="Passeport" Grid.Row="0" Grid.Column="4"  Width="83" Height ="40" BorderBrush="#FFCCC81B" BorderThickness="1" Background="#33CCC81B" />
+                    <Button Content="Echeance" Grid.Row="0" Grid.Column="5"  Width="83" Height ="40" BorderBrush="#FFCCC81B" BorderThickness="1" Background="#33CCC81B" />
+                    <TextBox Grid.Row="1" Grid.Column="0" BorderThickness="0" Background="#66FFFFFF" />
+                    <TextBox Grid.Row="1" Grid.Column="1" BorderThickness="0" Background="#66FFFFFF" />
+                    <TextBox Grid.Row="1" Grid.Column="2" BorderThickness="0" Background="#66FFFFFF" />
+                    <TextBox Grid.Row="1" Grid.Column="3" BorderThickness="0" Background="#66FFFFFF" />
+                    <TextBox Grid.Row="1" Grid.Column="4" BorderThickness="0" Background="#66FFFFFF" />
+                    <TextBox Grid.Row="1" Grid.Column="5" BorderThickness="0" Background="#66FFFFFF" />
+
+                    <TextBox Grid.Row="2" Grid.Column="0" BorderThickness="0" Background="#66FFFFFF"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" BorderThickness="0" Background="#66FFFFFF"/>
+                    <TextBox Grid.Row="2" Grid.Column="2" BorderThickness="0" Background="#66FFFFFF"/>
+                    <TextBox Grid.Row="2" Grid.Column="3" BorderThickness="0" Background="#66FFFFFF"/>
+                    <TextBox Grid.Row="2" Grid.Column="4" BorderThickness="0" Background="#66FFFFFF" />
+                    <TextBox Grid.Row="2" Grid.Column="5" BorderThickness="0" Background="#66FFFFFF" />
+
+                    <TextBox Grid.Row="3" Grid.Column="0" BorderThickness="0" Background="#66FFFFFF" />
+                    <TextBox Grid.Row="3" Grid.Column="1" BorderThickness="0" Background="#66FFFFFF" />
+                    <TextBox Grid.Row="3" Grid.Column="2" BorderThickness="0" Background="#66FFFFFF" />
+                    <TextBox Grid.Row="3" Grid.Column="3" BorderThickness="0" Background="#66FFFFFF" />
+                    <TextBox Grid.Row="3" Grid.Column="4" BorderThickness="0" Background="#66FFFFFF" />
+                    <TextBox Grid.Row="3" Grid.Column="5" BorderThickness="0" Background="#66FFFFFF" />
+
+                    <TextBox Grid.Row="4" Grid.Column="0" BorderThickness="0" Background="#66FFFFFF" />
+                    <TextBox Grid.Row="4" Grid.Column="1" BorderThickness="0" Background="#66FFFFFF" />
+                    <TextBox Grid.Row="4" Grid.Column="2" BorderThickness="0" Background="#66FFFFFF" />
+                    <TextBox Grid.Row="4" Grid.Column="3" BorderThickness="0" Background="#66FFFFFF" />
+                    <TextBox Grid.Row="4" Grid.Column="4" BorderThickness="0" Background="#66FFFFFF" />
+                    <TextBox Grid.Row="4" Grid.Column="5" BorderThickness="0" Background="#66FFFFFF" />
+
+                    <TextBox Grid.Row="5" Grid.Column="0" BorderThickness="0" Background="#66FFFFFF" />
+                    <TextBox Grid.Row="5" Grid.Column="1" BorderThickness="0" Background="#66FFFFFF" />
+                    <TextBox Grid.Row="5" Grid.Column="2" BorderThickness="0" Background="#66FFFFFF" />
+                    <TextBox Grid.Row="5" Grid.Column="3" BorderThickness="0" Background="#66FFFFFF" />
+                    <TextBox Grid.Row="5" Grid.Column="4" BorderThickness="0" Background="#66FFFFFF" />
+                    <TextBox Grid.Row="5" Grid.Column="5" BorderThickness="0" Background="#66FFFFFF" />
+                </Grid>
+
+                <TextBox x:Name="txbMessage" Width="500" Height="40" BorderThickness="2" Background="#66FFFFFF" BorderBrush="#FFCCC81B" CornerRadius="10,10,10,10" Margin="0,20,0,0" Padding="20,6,6,3" />
+
+                <StackPanel Width="500" Height="100" Margin="0,20,0,0" Orientation="Horizontal" BorderBrush="#FFCCC81B" BorderThickness="2" CornerRadius="10,10,10,10" Padding="30,0,25,0">
+                    <Button x:Name="btnPremier" Content="Premier" Width="100" Height="40" Background="#FFCCC81B" CornerRadius="10,10,10,10" Margin="0,5,5,5" Click="btnPremier_Click" />
+                    <Button x:Name="btnSuivant" Content="Suivant" Width="100" Height="40" Background="#FFCCC81B" CornerRadius="10,10,10,10" Margin="5,5,5,5" Click="btnSuivant_Click" />
+                    <Button x:Name="btnPrecedent" Content="Precedent" Width="100" Height="40" Background="#FFCCC81B" CornerRadius="10,10,10,10" Margin="5,5,5,5" Click="btnPrecedent_Click" />
+                    <Button x:Name="btnDernier" Content="Dernier" Width="100" Height="40" Background="#FFCCC81B" CornerRadius="10,10,10,10" Margin="5,5,0,5" Click="btnDernier_Click" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+    </StackPanel>
+</Page>
